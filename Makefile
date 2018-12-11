@@ -146,6 +146,7 @@ extras:
 		--input-dir=/usr/share/vpp/api/ \
 		--output-dir=vendor/git.fd.io/govpp.git/core/bin_api/
 	@cd cnivpp/vpp-app && go build -v
+	@cp -f cnivpp/vpp-app/vpp-app cnivpp/docker/vpp-centos-userspace-cni
 
 clean:
 	@rm -f cnivpp/vpp-app/vpp-app

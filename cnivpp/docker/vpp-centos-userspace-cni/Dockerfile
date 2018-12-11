@@ -23,7 +23,7 @@ RUN yum install -y git golang make
 
 # Build the vpp-app
 WORKDIR /root/go/src/github.com/intel/
-RUN git clone https://github.com/intel/userspace-cni-network-plugin
+RUN git clone -b dev https://github.com/lkpdn/userspace-cni-network-plugin
 WORKDIR /root/go/src/github.com/intel/userspace-cni-network-plugin
 RUN make extras
 RUN cp cnivpp/vpp-app/vpp-app /usr/sbin/vpp-app
@@ -59,7 +59,7 @@ COPY vppcni.sh vppcni.sh
 
 # For Development, overwrite repo generated vpp-app with local development binary.
 # Needs to be commented out before each merge.
-#COPY vpp-app /usr/sbin/vpp-app
+COPY vpp-app /usr/sbin/vpp-app
 
 
 CMD bash -C './vppcni.sh';'bash'
