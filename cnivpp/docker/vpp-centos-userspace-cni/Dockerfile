@@ -62,5 +62,5 @@ COPY vppcni.sh vppcni.sh
 COPY vpp-app /usr/sbin/vpp-app
 
 
-CMD bash -C './vppcni.sh';'bash'
+CMD bash -C ./vppcni.sh && /usr/bin/sleep infinity
 #CMD [ "./vppcni.sh" ]
